@@ -1,7 +1,7 @@
 import pythonping
 from pythonping import ping
 
-IpList = ['1.1.1.1', '10.10.10.10']
+IpList = ['1.1.1.1', '8.8.8.8']
 
 for DeviceIP in IpList:
     #Remove/Add verbose=True to hide/show all ping responses
@@ -11,8 +11,10 @@ for DeviceIP in IpList:
         loss_rate = response_list.packet_loss * 100
         loss_rate_str = str(loss_rate)
         # print(loss_rate_str)
-        print(DeviceIP + " is experiencing " + loss_rate_str + "% packet loss.")
+        output = DeviceIP + " is experiencing " + loss_rate_str + "% packet loss."
+        print(output)
         print("")
     else:
-        print(DeviceIP + " is online.")
+        output = DeviceIP + " is online."
+        print(output)
         print("")

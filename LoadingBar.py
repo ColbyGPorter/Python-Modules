@@ -14,7 +14,8 @@ def loading_bar(iterations=100, delay=0.1, description="Loading", milestones=Non
         # Formatting of the loading bar
         bar_format = "{desc:<15}: {percentage:.0f}%|{bar:50}|",
         # Removes loading bar once it has reached 100%
-        leave = False
+        leave = False,
+        colour="blue"
     ) as pbar:
         for i in range(iterations):
             if i in milestones:

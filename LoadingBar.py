@@ -17,7 +17,26 @@ def loading_bar(iterations=100, delay=0.1, description="Loading", milestones=Non
         leave = False,
         colour="blue"
     ) as pbar:
-        for i in range(iterations):
+        for i in range(50):
+            if i in milestones:
+                pbar.set_description(milestones[i])
+            # Controlls how fast/slow the loading bar is
+            time.sleep(delay)
+            pbar.update(1)
+
+# Block to determine when to progress the bar based on switch output
+
+        # while True:
+        #     if chan.recv():
+        #         buffer += chan.recv(4096).decode(errors="ignore")
+        #         if ssh_milestone_text in buffer:
+        #             break
+        #     time.sleep(0.1)
+
+        # Simulates break to test loading before/after
+        # time.sleep(5)
+        
+        for i in range(50, 100):
             if i in milestones:
                 pbar.set_description(milestones[i])
             # Controlls how fast/slow the loading bar is
